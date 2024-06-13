@@ -1,0 +1,13 @@
+{
+    "git.ignoreLimitWarning": true,
+    "files.associations": {
+        "*.embeddedhtml": "html",
+        "iostream": "cpp",
+        "istream": "cpp",
+        "xstring": "cpp",
+        "ostream": "cpp",
+        "vector": "cpp",
+        "array": "cpp",
+        "string": "cpp"
+    }
+}
