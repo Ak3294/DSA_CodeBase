@@ -38,8 +38,7 @@ int main()
         cin >> v2;
         // This is Directed Graph
         graph[v1].push_back(v2);
-        
-    }
+        }
 
     for (int i = 1; i <= v; ++i)
     {

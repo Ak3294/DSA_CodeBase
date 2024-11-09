@@ -35,5 +35,4 @@ int main()
     print(m);
     m.clear();
     cout << "Data Cleared Successfully" << endl;
-    ;
 }

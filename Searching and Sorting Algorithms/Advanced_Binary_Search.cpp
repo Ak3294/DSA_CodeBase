@@ -1,11 +1,10 @@
-// Find the first and last position of sorted array.
-//   arr= {1,3,5,5,5,5,67,123,321}  where target element = 5
+// // Find the first and last position of sorted array.
+// // arr= {1,3,5,5,5,5,67,123,321}  where target element = 5
 
-#include <iostream>
-#include <vector>
+#include <bits/stdc++.h>
 using namespace std;
 
-int getIndex(vector<int> &nums, int target, bool getFirst)
+int advancedBinarySearch(vector<int> nums, int target, bool getFirst)
 {
     int start = 0, ans = -1;
     int end = nums.size() - 1;
@@ -26,53 +25,33 @@ int getIndex(vector<int> &nums, int target, bool getFirst)
             {
                 start = mid + 1; // Right hand side for finding last position
             }
-
         }
         else if (nums[mid] < target)
-            {
-                start = mid + 1;
-            }
-            else
-            {
-                end = mid - 1;
-            }
+        {
+            start = mid + 1;
         }
-        return ans;
-        
+        else
+        {
+            end = mid - 1;
+        }
+    }
+    return ans;
 }
+
 int main()
 {
-    vector<int> v(2,-1);
-    vector<int>input;
+    vector<int> nums = {1, 3, 5, 5, 5, 5, 67, 123, 321};
+    int target = 5;
 
-    int n,i,firstIndex, lastIndex,targetVal,placeHolder;
-    cout<<"Enter the Number of Element of an Array";
-    cin>>n;
-    cout<<"Enter the Sorted Array"<<endl;
-    for(i=0;i<n;i++)
+    // This function is the advanced form of Binary Search, which finds the starting and ending position of the target element;
+    int firstIndex = advancedBinarySearch(nums, target, true);
+    int secondIndex = advancedBinarySearch(nums, target, false);
+    if (firstIndex != -1 || secondIndex != -1)
     {
-        cin>>placeHolder;
-        input.push_back(placeHolder);
+        cout << firstIndex << " " << secondIndex;
     }
-    cout<<"Enter the Element which have to find the first and last index ";
-    cin>>targetVal;
-
-    firstIndex = getIndex(input,targetVal,true);
-    if(firstIndex==-1){
-        cout<<"Element does not present in the Array"<<endl;
-        exit(0);
+    else
+    {
+        cout << "Target Element is not present in the array" << endl;
     }
-    else{
-        v[0]=firstIndex;
-    }
-    lastIndex = getIndex(input,targetVal,false);
-    if(lastIndex==-1){
-        cout<<"Element does not present in the Array"<<endl;
-        exit(0);
-    }
-    else{
-        v[1]=lastIndex;
-    }
-    cout<<"First Index :"<<v[0]<<endl;
-    cout<<"Last Index :"<<v[1]<<endl;
 }

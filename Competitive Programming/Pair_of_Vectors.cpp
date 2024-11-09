@@ -2,7 +2,6 @@
 #include <vector>
 using namespace std;
 
-
 void printVec(vector<int> &v)
 {
     for (int i = 0; i < v.size(); i++)
@@ -14,20 +13,14 @@ void printVec(vector<int> &v)
 
 int main()
 {
-
-
     // CODE BLOCK - 1
-
 
     // vector<pair<int,int>>v={{1,1},{2,2},{3,3},{4,4},{5,5}};
     // for(int i=0;i<v.size();i++){
     //     cout<<v[i].first<<" "<<v[i].second<<endl;
     // }
 
-
-
     // CODE BLOCK - 2
-
 
     // vector<pair<int,string>>p;
     // int n;
@@ -43,13 +36,13 @@ int main()
     // }
 
     // Difference Between "Array of Vectors" and "vector of Vector".
-    
-    //CODE BLOCK - 4 :  Vector of Vector
+
+    // CODE BLOCK - 4 :  Vector of Vector
 
     cout << "How Many vector you want to Create." << endl;
     int N, n, x;
-    cin>>N;
-    vector<vector<int>>v;
+    cin >> N;
+    vector<vector<int>> v;
     for (int i = 0; i < N; i++)
     {
         cout << "Enter the Size of vector " << (i + 1) << endl;
@@ -68,13 +61,7 @@ int main()
         printVec(v[i]);
     }
 
-    
-
-
-
-
     // CODE BLOCK :3 - Array of Vector
-
 
     // cout << "How Many vector you want to Create." << endl;
     // int N, n, x;
