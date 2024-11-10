@@ -1,36 +1,45 @@
-#include <stdio.h>
-#include <stdlib.h>
-int main()
-{
-    int *ptr, n;
-    printf("Enter the Size of an  Array:");
-    scanf("%d", &n);
+// Test Case : PASSED
 
-    ptr = (int *)malloc(n * sizeof(int));
-    if (ptr == NULL)
+#include <iostream>
+using namespace std;
+
+void printArray(int arr[], int size)
+{
+    for (int i = 0; i < size; i++)
     {
-        printf("No Memory Allocation");
+        cout << arr[i];
     }
-    else
-    {
-        for (int i = 0; i < n; i++)
-        {
-            printf("Enter the Value of an Array:");
-            scanf("%d", (ptr + i));
-        }
-        for (int i = 0; i < n; i++)
-        {
-            printf("%d ", *(ptr + i));
-        }
-    }
-    return 0;
+    cout << "\n";
 }
 
+void insertionSort(int arr[], int size)
+{
+    for (int step = 1; step < size; step++)
+    {
+        int key = arr[step];
+        int j = step - 1;
+        while (key < arr[j] && j >= 0)
+        {
+            arr[j + 1] = arr[j];
+            --j;
+        }
+        arr[j + 1] = key;
+    }
+}
 
-// #include<bits/stdc++.h>
-// using namespace std;
+int main()
+{
+    int size;
+    cout << "Enter the Size of an Array :";
+    cin >> size;
+    int arr[100], i, j;
+    cout << "Enter Any" << size << "Integers  of an Array Elements\n";
+    for (i = 0; i < size; i++) // taking the elements
+    {
+        cin >> arr[i];
+    }
 
-
-// int main(){
-
-// }
+    insertionSort(arr, size);
+    cout<<"Sorted Array is  :";
+    printArray(arr, size);
+}
